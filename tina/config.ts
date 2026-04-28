@@ -1,6 +1,7 @@
 import { defineConfig } from "tinacms";
 import { schema } from "./schema";
 
+
 export const config = defineConfig({
   schema,
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
@@ -28,5 +29,27 @@ export const config = defineConfig({
     basePath: process.env.TINA_BASE_PATH || "",
   },
 });
-
 export default config;
+
+
+/* export const config = defineConfig({
+  branch: process.env.GITHUB_BRANCH || "main",
+
+  // ❗ niente clientId/token se lavori in locale
+  clientId: null,
+  token: null,
+
+  build: {
+    outputFolder: "admin",
+    publicFolder: "public",
+  },
+
+  media: {
+    tina: {
+      mediaRoot: "",
+      publicFolder: "public",
+    },
+  },
+});
+
+export default config; */

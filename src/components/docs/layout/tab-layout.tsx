@@ -34,7 +34,7 @@ export const TabsLayout = ({
     FormattedNavigation | undefined
   >();
   const [tabs, setTabs] = React.useState<TabItem[]>([]);
-  const [selectedTab, setSelectedTab] = React.useState<string | undefined>();
+  const [selectedTab, setSelectedTab] = React.useState<string>("");
   const [objectOfSelectedTab, setObjectOfSelectedTab] = React.useState<
     TabItem | undefined
   >();
@@ -79,6 +79,8 @@ export const TabsLayout = ({
       new CustomEvent("tabChange", { detail: { value: newIndex.toString() } })
     );
   };
+
+  if (!tabs.length || !selectedTab) return null;
 
   return (
     <Tabs.Root

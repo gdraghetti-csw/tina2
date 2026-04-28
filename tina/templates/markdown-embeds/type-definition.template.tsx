@@ -16,6 +16,23 @@ export const TypeDefinitionTemplate = {
       },
       fields: [
         {
+          type: "object",
+          name: "icon",
+          label: "Icon",
+          fields: [
+            {
+              type: "image",
+              name: "src",
+              label: "Image",
+            },
+            {
+              type: "string",
+              name: "alt",
+              label: "Alt text",
+            }
+          ]
+        },
+        {
           type: "string",
           name: "name",
           label: "Name",
@@ -26,9 +43,21 @@ export const TypeDefinitionTemplate = {
           label: "Description",
         },
         {
-          type: "string",
-          name: "type",
-          label: "Type",
+          type: "object",
+          name: "icon_link",
+          label: "Icon Link",
+          fields: [
+            {
+              type: "image",
+              name: "src",
+              label: "Image",
+            },
+            {
+              type: "string",
+              name: "alt",
+              label: "Alt text",
+            }
+          ]
         },
         {
           type: "string",

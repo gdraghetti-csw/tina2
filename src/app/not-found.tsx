@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import ErrorWrapper from "./error-wrapper";
 
 export default async function NotFound() {

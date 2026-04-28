@@ -10,6 +10,7 @@ import RecipeTemplate from "@/tina/templates/markdown-embeds/recipe.template";
 import ScrollShowcaseTemplate from "@/tina/templates/markdown-embeds/scroll-showcase.template";
 import { TypeDefinitionTemplate } from "@/tina/templates/markdown-embeds/type-definition.template";
 import YoutubeTemplate from "@/tina/templates/markdown-embeds/youtube.template";
+import { ColorButtonTemplate } from "../templates/markdown-embeds/color-button.template";
 import type { Template } from "tinacms";
 import SeoInformation from "./seo-information";
 
@@ -92,6 +93,7 @@ export const docsCollection = {
         AccordionTemplate as Template,
         AccordionBlockTemplate as Template,
         ApiReferenceTemplate as Template,
+        ColorButtonTemplate as unknown as Template,
         YoutubeTemplate as Template,
         CodeTabsTemplate as Template,
         CalloutTemplate as Template,

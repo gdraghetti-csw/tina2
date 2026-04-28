@@ -7,6 +7,8 @@ import {
   createListener,
   useWindowSize,
 } from "./scroll-showcase.helpers";
+import ColorButton  from "./cs-color-button";
+import MarkdownComponentMapping from "../markdown-component-mapping";
 
 /** Main Component */
 export function ScrollBasedShowcase(data: {
@@ -78,6 +80,10 @@ export function ScrollBasedShowcase(data: {
       setActiveImageSrc(heading.src);
     }
   }, [activeIds, headings]);
+
+  const components = {
+    colorButton: ColorButton,
+  };
 
   return (
     <div
@@ -153,7 +159,7 @@ export function ScrollBasedShowcase(data: {
                   }`}
                 >
                   <li>
-                    <TinaMarkdown content={item.content} />
+                    <TinaMarkdown content={item.content} components={MarkdownComponentMapping} />
                   </li>
                 </ul>
 

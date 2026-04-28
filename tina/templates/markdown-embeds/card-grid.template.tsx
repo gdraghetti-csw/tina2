@@ -1,3 +1,5 @@
+import { icon } from "mermaid/dist/rendering-util/rendering-elements/shapes/icon";
+
 export const CardGridTemplate = {
   name: "cardGrid",
   label: "Card Grid",
@@ -9,6 +11,10 @@ export const CardGridTemplate = {
           description: "Card Description",
           link: "https://www.google.com",
           linkText: "Search now",
+          /* ********************************************************* MODIFICHE FATTE QUI ********************************************************* */
+          image: "https://via.placeholder.com/200x100",
+          icon: "FaStar",
+          /* ********************************************************* MODIFICHE FATTE QUI ********************************************************* */
         },
       ],
     },
@@ -26,6 +32,10 @@ export const CardGridTemplate = {
             description: "Card Description",
             link: "https://www.google.com",
             linkText: "Search now",
+            /* ********************************************************* MODIFICHE FATTE QUI ********************************************************* */
+            image: "https://via.placeholder.com/200x100",
+            /* icon: "FaStar", */
+            /* ********************************************************* MODIFICHE FATTE QUI ********************************************************* */
           };
         },
         itemProps: (item) => {
@@ -58,6 +68,24 @@ export const CardGridTemplate = {
           label: "Button Text",
           type: "string",
         },
+        /* ********************************************************* MODIFICHE FATTE QUI ********************************************************* */
+        {
+          name: "image",
+          label: "Image",
+          type: "image",
+        },
+        /* {
+          name: "icon",
+          label: "Icon",
+          type: "string",
+          options: [
+            { label: "Beer", value: "FaBeer" },
+            { label: "Github", value: "FaGithub" },
+            { label: "User", value: "FaUser" },
+            { label: "Star", value: "FaStar" },
+          ],
+        }, */
+        /* ********************************************************* MODIFICHE FATTE QUI ********************************************************* */
       ],
     },
   ],

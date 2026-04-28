@@ -15,9 +15,11 @@ import HeaderFormat from "./standard-elements/header-format";
 import { ImageComponent } from "./standard-elements/image";
 import MermaidElement from "./standard-elements/mermaid-diagram";
 import Table from "./standard-elements/table";
+import ColorButton  from "./embedded-elements/cs-color-button";
 
 type ComponentMapping = {
   youtube: { embedSrc: string; caption?: string; minutes?: string };
+  colorButton: { color: string; name: string; variant?: "full" | "color" };
   codeTabs: {
     tabs: {
       name: string;
@@ -122,6 +124,7 @@ type CalloutVariant =
 
 export const MarkdownComponentMapping: Components<ComponentMapping> = {
   // Our embeds we can inject via MDX
+  colorButton: (props) => <ColorButton {...props} />,
   scrollShowcase: (props) => <ScrollBasedShowcase {...props} />,
   cardGrid: (props) => <CardGrid {...props} />,
   recipe: (props) => <RecipeBlock {...props} />,

@@ -1,3 +1,6 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 import { TinaClient } from "@/app/tina-client";
 import settings from "@/content/siteConfig.json";
 import { fetchTinaData } from "@/services/tina/fetch-tina-data";
@@ -13,7 +16,7 @@ const siteUrl =
     ? "http://localhost:3000"
     : settings.siteUrl;
 
-export async function generateStaticParams() {
+/* export async function generateStaticParams() {
   try {
     let pageListData = await client.queries.docsConnection();
     const allPagesListData = pageListData;
@@ -50,7 +53,7 @@ export async function generateStaticParams() {
     console.error("Error in generateStaticParams:", error);
     return [];
   }
-}
+} */
 
 export async function generateMetadata({
   params,
