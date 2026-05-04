@@ -2,6 +2,19 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import MarkdownComponentMapping from "../markdown-component-mapping";
 
+function controlIconColor(iconName: string): string {
+  if (iconName.toLowerCase().includes("folder")) {
+    return "#f2b559";
+  }
+  if (iconName.toLowerCase().includes("pdf")) {
+    return "#F25959";
+  }
+  if (iconName.toLowerCase().includes("doc")) {
+    return "#59a9f2";
+  }
+  return "currentColor";
+}
+
 export default function TypeDefinition(props) {
   {
     const propertyItem = (property) => {
@@ -14,18 +27,12 @@ export default function TypeDefinition(props) {
                 {property.typeUrl ? (
                   <a href={property.typeUrl} rel="noopener noreferrer" target="_blank">
                     <div className="w-full flex flex-col md:flex-row md:items-start gap-2">
-                      <div className="flex justify-center">
-                          {property.icon?.src && (
-                            <div className="flex justify-center">
-                              <img
-                                src={property.icon.src}
-                                alt={property.icon.alt || property.name}
-                                className="w-5 h-5 object-contain"
-                              />
-                            </div>
+                      <div className="flex justify-center md:w-1/9">
+                          {property.icon && (
+                            <i className={property.icon} style={{ fontSize: "2.5rem", color: controlIconColor(property.icon) }}></i>
                           )}
                       </div>
-                      <div className="w-full md:w-8/9">
+                      <div className="w-full md:w-7/9">
                         <div
                           className="font-heading text-lg text-neutral-text break-normal max-w-full inline-block"
                           data-tina-field={tinaField(property, "name")}
@@ -52,16 +59,16 @@ export default function TypeDefinition(props) {
                           )}
                         </div>
                       </div>
-                      <div className="w-full md:w-1/9 text-blue-600 flex justify-center">
-                        {property.icon_link?.src && (
+                      <div className="w-full md:w-1/9 flex justify-end"> 
+                        {property.icon_link ? (
                             <div className="flex justify-center">
-                              <img
-                                src={property.icon_link.src}
-                                alt={property.icon_link.alt || property.name}
-                                className="w-5 h-5 object-contain"
-                              />
+                              <i className={property.icon_link} style={{ fontSize: "1.5rem" }}></i>
                             </div>
-                          )}
+                          ) : (
+                            <div className="flex justify-center">
+                              <i className="fa-duotone fa-solid fa-arrow-up-right-from-square" style={{ fontSize: "1.5rem" }}></i>
+                            </div>
+                          ) }
                       </div>
                     </div>
                   </a>

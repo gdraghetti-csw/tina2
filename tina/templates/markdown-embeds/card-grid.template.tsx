@@ -34,7 +34,7 @@ export const CardGridTemplate = {
             linkText: "Search now",
             /* ********************************************************* MODIFICHE FATTE QUI ********************************************************* */
             image: "https://via.placeholder.com/200x100",
-            /* icon: "FaStar", */
+            icon: "FaStar",
             /* ********************************************************* MODIFICHE FATTE QUI ********************************************************* */
           };
         },
@@ -74,17 +74,11 @@ export const CardGridTemplate = {
           label: "Image",
           type: "image",
         },
-        /* {
+        {
           name: "icon",
           label: "Icon",
           type: "string",
-          options: [
-            { label: "Beer", value: "FaBeer" },
-            { label: "Github", value: "FaGithub" },
-            { label: "User", value: "FaUser" },
-            { label: "Star", value: "FaStar" },
-          ],
-        }, */
+        },
         /* ********************************************************* MODIFICHE FATTE QUI ********************************************************* */
       ],
     },

@@ -9,7 +9,6 @@ export const CardGrid = (data: {
     title: string;
     description: string;
     link: string;
-    linkText: string;
     /* ********************************************************* MODIFICHE FATTE QUI ********************************************************* */
     image?: string;
     icon?: string;
@@ -22,26 +21,26 @@ export const CardGrid = (data: {
     <div className="my-8 grid grid-cols-1 rounded-lg gap-4 lg:grid-cols-2">
       {data.cards?.map((card, index) => {
         if (card.link) {
-          /* ********************************************************* MODIFICHE FATTE QUI ********************************************************* */
-          /* const IconComponent = iconMap[card.icon as keyof typeof iconMap]; */
-          /* ********************************************************* MODIFICHE FATTE QUI ********************************************************* */
           return (
             <Link
               href={card.link}
               className={cardClasses}
               key={`card-${index}-${card.title}`}
             >{/* ********************************************************* MODIFICHE FATTE QUI ********************************************************* */}
-              {/* {IconComponent && (
-                <div className="mb-4 text-3xl">
-                  <IconComponent />
-                </div>
-              )} */}
-              <img
+              <div className="bg-blue-500/10 py-6 flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
+                {card.image && (
+                  <img
                 src={card.image}
                 alt={card.title}
                 className="mb-4 rounded-md w-full h-32 object-cover"
                 data-tina-field={tinaField(data.cards[index], "image")}
               />
+                )}
+                {card.icon && (
+                  <i className={card.icon} style={{ fontSize: "2.5rem" }}></i>
+                  //<i className="fa-duotone fa-solid fa-megaphone"></i>
+                )}
+              </div>
             {/* ********************************************************* MODIFICHE FATTE QUI ********************************************************* */}
               <h2
                 className="text-2xl font-medium brand-primary-gradient mb-2 font-heading"
@@ -57,14 +56,7 @@ export const CardGrid = (data: {
               </p>
               {card.link && (
                 <p className="flex items-center absolute bottom-4">
-                  <span
-                    className="relative brand-secondary-gradient"
-                    data-tina-field={tinaField(data.cards[index], "linkText")}
-                  >
-                    {card.linkText ?? "See more"}
-                    <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gradient-to-r from-brand-secondary-gradient-start to-brand-secondary-gradient-end group-hover:w-full transition-all duration-300 ease-in-out" />
-                  </span>
-                  <span className="ml-1 mr-2 brand-secondary-gradient"> ›</span>
+                  Vai alla documentazione ›
                 </p>
               )}
             </Link>

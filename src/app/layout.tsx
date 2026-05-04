@@ -12,6 +12,7 @@ import { TabsLayout } from "@/components/docs/layout/tab-layout";
 import type React from "react";
 import { TinaClient } from "./tina-client";
 
+
 const isDev = process.env.NODE_ENV === "development";
 
 const body = Inter({ subsets: ["latin"], variable: "--body-font" });
@@ -39,6 +40,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#E6FAF8" />
         <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <script src="https://kit.fontawesome.com/71b1a7f21a.js" crossOrigin="anonymous"></script>
       </head>
       <body className={`${body.variable} ${heading.variable}`}>
         {!isDev && gtmId && (
