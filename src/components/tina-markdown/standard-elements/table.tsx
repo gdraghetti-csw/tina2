@@ -57,7 +57,7 @@ console.log("hasMatch", hasMatch);
 console.log("firstCellContent", firstCellContent2); 
 
   return (
-    <div className="my-6 overflow-x-auto rounded-lg shadow-md mx-4" style={hasMatch ? {float: "left"} : {float: "none"}}>
+    <div className="my-6 overflow-x-auto rounded-lg shadow-md mx-4" /* style={hasMatch ? {float: "left"} : {float: "none"}} */>
       <table className="w-full table-auto">
         <tbody>
           {tableRows.map((row, rowIndex) => {
