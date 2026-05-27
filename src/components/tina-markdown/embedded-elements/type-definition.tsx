@@ -27,11 +27,13 @@ export default function TypeDefinition(props) {
                 {property.typeUrl ? (
                   <a href={property.typeUrl} rel="noopener noreferrer" target="_blank">
                     <div className="w-full flex flex-col md:flex-row md:items-start gap-2">
-                      <div className="flex justify-center md:w-1/9">
-                          {property.icon && (
-                            <i className={property.icon} style={{ fontSize: "2.5rem", color: controlIconColor(property.icon) }}></i>
-                          )}
-                      </div>
+                      { property.icon &&
+                        <div className="flex justify-center md:w-1/9">
+                            {property.icon && (
+                              <i className={property.icon} style={{ fontSize: "2.5rem", color: controlIconColor(property.icon) }}></i>
+                            )}
+                        </div>
+                      }
                       <div className="w-full md:w-7/9">
                         <div
                           className="font-heading text-lg text-neutral-text break-normal max-w-full inline-block"
@@ -43,6 +45,8 @@ export default function TypeDefinition(props) {
                           className="text-neutral-text-secondary text-sm w-fit"
                           data-tina-field={tinaField(property, "description")}
                         >
+                          {/* <p>{property.description}</p> */}
+                          {/* Questo è per mettere rich-text */}
                           <TinaMarkdown
                             content={property.description}
                             components={MarkdownComponentMapping}

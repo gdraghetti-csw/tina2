@@ -1,3 +1,4 @@
+
 export const TypeDefinitionTemplate = {
   name: "typeDefinition",
   label: "Type Definition",
@@ -29,6 +30,9 @@ export const TypeDefinitionTemplate = {
           type: "rich-text",
           name: "description",
           label: "Description",
+          /* ui: {
+            component: "textarea"
+          } */
         },
         {
           type: "string",

@@ -51,6 +51,11 @@ export const docsCollection = {
   fields: [
     SeoInformation,
     {
+      name: "order",
+      label: "Order",
+      type: "number",
+    },
+    {
       name: "title",
       label: "Title",
       type: "string",
